@@ -37,7 +37,7 @@ public class PrimaryViewController {
 
         this.app = app;
 
-        primaryController =
+        this.primaryController =
                 new co.uniquindio.edu.co.poo.parqueaderojfx.controller.PrimaryController(app);
     }
 }

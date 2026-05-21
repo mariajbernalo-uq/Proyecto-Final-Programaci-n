@@ -1,6 +1,7 @@
 module co.uniquindio.edu.co.poo.parqueaderojfx {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
 
     opens co.uniquindio.edu.co.poo.parqueaderojfx  to javafx.fxml;

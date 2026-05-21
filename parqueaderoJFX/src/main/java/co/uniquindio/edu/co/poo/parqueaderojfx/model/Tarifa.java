@@ -10,8 +10,8 @@ public class Tarifa {
      * @param tipoVehiculo para calcular la tarifa
      */
     public Tarifa(TipoVehiculo tipoVehiculo) {
-        this.valorPorHora = asignarTarifa();
         this.tipoVehiculo = tipoVehiculo;
+        this.valorPorHora = asignarTarifa();
     }
 
     /**

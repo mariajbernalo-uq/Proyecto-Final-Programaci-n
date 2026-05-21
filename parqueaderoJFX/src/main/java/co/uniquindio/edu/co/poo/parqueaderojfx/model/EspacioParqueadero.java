@@ -80,4 +80,7 @@ public class EspacioParqueadero {
         this.tipoVehiculo = tipoVehiculo;
     }
 
+    public Vehiculo getTheVehiculo() {
+        return theVehiculo;
+    }
 }

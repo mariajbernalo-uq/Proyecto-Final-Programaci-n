@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER"
+      spacing="20"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.uniquindio.edu.co.poo.parqueaderojfx.viewController.UniversidadViewController"
+      style="-fx-background-color: #f4f4f4;">
+
+    <padding>
+        <Insets top="20"
+                right="20"
+                bottom="20"
+                left="20"/>
+    </padding>
+
+    <children>
+
+        <Label text="Reportes del Parqueadero">
+            <font>
+                <Font name="System Bold" size="22"/>
+            </font>
+        </Label>
+
+        <TextArea fx:id="txtAreaReportes"
+                  editable="false"
+                  prefHeight="350"
+                  prefWidth="600"
+                  wrapText="true"/>
+
+        <HBox alignment="CENTER" spacing="15">
+
+            <Button text="Estado Espacios"
+                    onAction="#onConsultarEstadoEspacios"/>
+
+            <Button text="Vehículos Parqueados"
+                    onAction="#onConsultarVehiculos"/>
+
+            <Button text="Volver"
+                    onAction="#onVolver"/>
+
+        </HBox>
+
+    </children>
+</VBox>

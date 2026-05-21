@@ -39,7 +39,7 @@ public class Vehiculo {
         this.nombreConductor = nombreConductor;
     }
 
-    public String getIdentificacionConductor() {
+    public int getIdentificacionConductor() {
         return this.identificacionConductor;
     }
 

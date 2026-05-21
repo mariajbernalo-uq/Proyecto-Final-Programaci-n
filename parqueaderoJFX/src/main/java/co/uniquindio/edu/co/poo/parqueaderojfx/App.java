@@ -1,9 +1,11 @@
 package co.uniquindio.edu.co.poo.parqueaderojfx;
 
+import co.uniquindio.edu.co.poo.parqueaderojfx.controller.PrimaryController;
 import co.uniquindio.edu.co.poo.parqueaderojfx.model.TipoUsuario;
 import co.uniquindio.edu.co.poo.parqueaderojfx.model.TipoVehiculo;
 import co.uniquindio.edu.co.poo.parqueaderojfx.model.Universidad;
 import co.uniquindio.edu.co.poo.parqueaderojfx.viewController.*;
+import co.uniquindio.edu.co.poo.parqueaderojfx.viewController.PrimaryViewController;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -60,7 +62,7 @@ public class App extends Application {
 
             Scene scene = new Scene(loader.load());
 
-            PrimaryController controller =
+            PrimaryViewController controller =
                     loader.getController();
 
             controller.setApp(this);
