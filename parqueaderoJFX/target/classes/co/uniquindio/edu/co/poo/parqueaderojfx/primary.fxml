@@ -3,13 +3,52 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="co.uniquindio.edu.co.poo.parqueaderojfx.viewController.PrimaryController">
+<VBox alignment="CENTER"
+      spacing="20.0"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.uniquindio.edu.co.poo.parqueaderojfx.viewController.PrimaryViewController"
+      style="-fx-background-color: #f4f4f4;">
+
     <padding>
-        <Insets bottom="30.0" left="20.0" right="20.0" top="20.0" />
+        <Insets top="40.0"
+                right="40.0"
+                bottom="40.0"
+                left="40.0"/>
     </padding>
-   <Label text="Bienvenidos al sistema de parqueadero de la UQ" />
 
-    <Label fx:id="welcomeText" />
-    <Button onAction="#onOpenOpcionesParqueadero" text="Entrar" />
+    <children>
+
+        <Label text="PARKUQ">
+            <font>
+                <Font name="System Bold"
+                      size="28.0"/>
+            </font>
+        </Label>
+
+        <Label text="Bienvenidos al sistema de parqueadero de la Universidad del Quindío"
+               textAlignment="CENTER"
+               wrapText="true"
+               maxWidth="400">
+
+            <font>
+                <Font size="16.0"/>
+            </font>
+
+        </Label>
+
+        <Label fx:id="welcomeText"/>
+
+        <Button text="Entrar al Sistema"
+                onAction="#onOpenOpcionesParqueadero"
+                prefWidth="180"
+                prefHeight="40"
+                style="-fx-background-color: #07912c;
+                       -fx-text-fill: white;
+                       -fx-font-size: 14px;
+                       -fx-font-weight: bold;" />
+
+    </children>
 </VBox>
