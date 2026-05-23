@@ -3,52 +3,33 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER"
-      spacing="20.0"
-      xmlns="http://javafx.com/javafx/17.0.12"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="co.uniquindio.edu.co.poo.parqueaderojfx.viewController.PrimaryViewController"
-      style="-fx-background-color: #f4f4f4;">
+<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: #f5fff7; -fx-border-color: green; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.edu.co.poo.parqueaderojfx.viewController.PrimaryViewController">
 
     <padding>
-        <Insets top="40.0"
-                right="40.0"
-                bottom="40.0"
-                left="40.0"/>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
     </padding>
 
     <children>
 
-        <Label text="PARKUQ">
+        <Label text="ParqueaUQ">
             <font>
-                <Font name="System Bold"
-                      size="28.0"/>
+                <Font name="Arial Bold" size="30.0" />
             </font>
         </Label>
 
-        <Label text="Bienvenidos al sistema de parqueadero de la Universidad del Quindío"
-               textAlignment="CENTER"
-               wrapText="true"
-               maxWidth="400">
+        <Label maxWidth="400" text="Bienvenidos al sistema de parqueadero de la Universidad del Quindío" textAlignment="CENTER" wrapText="true">
 
             <font>
-                <Font size="16.0"/>
+                <Font size="16.0" />
             </font>
 
         </Label>
 
-        <Label fx:id="welcomeText"/>
+        <Label fx:id="welcomeText" />
 
-        <Button text="Entrar al Sistema"
-                onAction="#onOpenOpcionesParqueadero"
-                prefWidth="180"
-                prefHeight="40"
-                style="-fx-background-color: #07912c;
-                       -fx-text-fill: white;
-                       -fx-font-size: 14px;
-                       -fx-font-weight: bold;" />
+        <Button onAction="#onOpenOpcionesParqueadero" prefHeight="40" prefWidth="180" style="-fx-background-color: #07912c;                        -fx-text-fill: white;                        -fx-font-size: 14px;                        -fx-font-weight: bold;" text="Entrar " />
 
     </children>
 </VBox>

@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="309.0" prefWidth="427.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.edu.co.poo.parqueaderojfx.viewController.OpcionesParqueaderoViewController">
+<VBox alignment="CENTER" prefHeight="309.0" prefWidth="427.0" style="-fx-background-color: #f5fff7; -fx-border-color: green; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.edu.co.poo.parqueaderojfx.viewController.OpcionesParqueaderoViewController">
     <padding>
         <Insets bottom="30.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-    <Label text="Bienvenidos al sistema de parqueadero de la UQ" textAlignment="CENTER" textFill="#07912c" wrapText="true">
+    <Label text="Bienvenidos al sistema de parqueadero de la UQ" textAlignment="CENTER" textFill="#04661d" wrapText="true">
       <font>
          <Font name="System Bold" size="18.0" />
       </font></Label>
@@ -27,7 +27,10 @@
      </rowConstraints>
       <children>
          <Button mnemonicParsing="false" onAction="#openInterfazVehiculo" text="Vehículo" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-         <Button fx:id="openInterfazVehiculo" layoutX="48.0" layoutY="12.0" mnemonicParsing="false" onAction="#openInterfazUsuario" text="Usuario" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+         <Button fx:id="openInterfazVehiculo" layoutX="48.0" layoutY="12.0" mnemonicParsing="false" onAction="#openInterfazUsuario" text="Usuario" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+            <font>
+               <Font name="Arial" size="12.0" />
+            </font></Button>
          <Button fx:id="btnInterfazTarifa" layoutX="176.0" layoutY="12.0" mnemonicParsing="false" onAction="#openInterfazTarifa" text="Tarifa" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
          <Button fx:id="btnInterfazEspacioParqueadero" layoutX="11.0" layoutY="12.0" mnemonicParsing="false" onAction="#openInterfazEspacioParqueadero" text="EspacioParqueadero" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
          <Button fx:id="btnInterfazUniversidad" layoutX="44.0" layoutY="12.0" mnemonicParsing="false" onAction="#openInterfazuniversidad" text="Reportes" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
