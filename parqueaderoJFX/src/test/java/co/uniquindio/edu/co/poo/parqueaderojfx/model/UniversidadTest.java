@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class UniversidadTest {
 
     @Test
-    void obtenerVehiculo() {
+    void obtenerVehiculoTest() {
         Universidad universidad=new Universidad("UQ",1236,"Cra 14");
         EspacioParqueadero espacioParqueadero=new EspacioParqueadero(3,TipoVehiculo.CARRO);
         Usuario usuario=new Usuario("Sofia","1092851",TipoUsuario.ESTUDIANTE);
@@ -18,21 +18,33 @@ class UniversidadTest {
     }
 
     @Test
-    void registrarVehiculo() {
+    void registrarVehiculoTest() {
+        Universidad universidad=new Universidad("UQ",1236,"Cra 14");
+        Vehiculo vehiculo=new Vehiculo("MXQ852","Sofia",1235,"02:00","05:00",null,TipoVehiculo.CARRO,null,EstadoVehiculo.DENTRO);
+        universidad.getListVehiculos().add(vehiculo);
+        assertEquals(true,universidad.registrarVehiculo(vehiculo));
     }
 
     @Test
-    void registrarEntradaVehiculo() {
+    void registrarEntradaVehiculoTest() {
+        Universidad universidad=new Universidad("UQ", 1236,"Cra 14");
+        EspacioParqueadero espacioParqueadero=new EspacioParqueadero(5,TipoVehiculo.CARRO);
+        Vehiculo vehiculo=new Vehiculo("MXQ852","Sofia",1235,"02:00","05:00",null,TipoVehiculo.CARRO,null,EstadoVehiculo.DENTRO);
+        universidad.getListVehiculos().add(vehiculo);
+//Terminar
     }
 
     @Test
-    void calcularTiempoPermanencia() {
+    void calcularTiempoPermanenciaTest() {
+        Universidad universidad=new Universidad("uq",159,"34");
+        Vehiculo vehiculo=new Vehiculo("mq","sofia",147,"08:00","12:00",null,TipoVehiculo.CARRO,null,EstadoVehiculo.DENTRO);
+        assertEquals(4.0,universidad.calcularTiempoPermanencia("08:00","12:00"));
     }
-
     @Test
-    void registrarSalidaVehiculo() {
-    }
-
+    void registrarSalidaVehiculoTest(){
+        Universidad universidad=new Universidad("uq",159,"34");
+        Vehiculo vehiculo=new Vehiculo("mq","sofia",147,"08:00","12:00",null,TipoVehiculo.CARRO,null,EstadoVehiculo.DENTRO);
+        assertEquals();   }
     @Test
     void buscarEspacioDisponible() {
     }
