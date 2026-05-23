@@ -75,13 +75,18 @@ public class TarifaViewController {
     }
 
     @FXML
-    void onEliminar() {
+    void onEliminarTarifa() {
         eliminarTarifa();
     }
 
     @FXML
     void onLimpiar() {
         limpiarSeleccion();
+    }
+
+    @FXML
+    void onRegresar(){
+        app.openOpcionesParqueaderoView();
     }
 
     @FXML

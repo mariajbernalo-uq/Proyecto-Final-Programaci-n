@@ -95,6 +95,11 @@ public class VehiculoViewController {
     }
 
     @FXML
+    void onRegresar() {
+        regresarMenu();
+    }
+
+    @FXML
     void initialize() {
         cbTipoVehiculo.setItems(
                 FXCollections.observableArrayList(TipoVehiculo.values())
@@ -251,6 +256,10 @@ public class VehiculoViewController {
         tblListVehiculo.getSelectionModel().clearSelection();
         selectedVehiculo = null;
         limpiarCamposVehiculo();
+    }
+
+    private void regresarMenu() {
+        app.openOpcionesParqueaderoView();
     }
 
     private void limpiarCamposVehiculo() {

@@ -79,6 +79,10 @@ public class UsuarioViewController {
     void onEliminar() {
         eliminarUsuario();
     }
+    @FXML
+    void onRegresar() {
+        regresarMenu();;
+    }
 
     @FXML
     void initialize() {
@@ -191,6 +195,11 @@ public class UsuarioViewController {
         selectedUsuario = null;
         limpiarCamposUsuario();
     }
+
+    private void regresarMenu() {
+        app.openOpcionesParqueaderoView();
+    }
+
 
     private void limpiarCamposUsuario() {
         txtIdentificacion.clear();
