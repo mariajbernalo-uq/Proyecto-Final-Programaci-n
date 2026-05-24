@@ -29,9 +29,9 @@ class UniversidadTest {
     void registrarEntradaVehiculoTest() {
         Universidad universidad=new Universidad("UQ", 1236,"Cra 14");
         EspacioParqueadero espacioParqueadero=new EspacioParqueadero(5,TipoVehiculo.CARRO);
-        Vehiculo vehiculo=new Vehiculo("MXQ852","Sofia",1235,"02:00","05:00",null,TipoVehiculo.CARRO,null,EstadoVehiculo.DENTRO);
-        universidad.getListVehiculos().add(vehiculo);
-//Terminar
+        universidad.getListEspaciosParqueaderos().add(espacioParqueadero);
+       String resultado= universidad.registrarEntradaVehiculo("MXQ852","Sofia",1235,"02:00",TipoVehiculo.CARRO,null);
+        assertEquals("Se ha añadido el vehículo exitosamente",resultado);
     }
 
     @Test
