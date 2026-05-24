@@ -137,6 +137,9 @@
                         </TableView>
 
                         <!-- BOTON LIMPIAR -->
+                        <Button fx:id="btnLimpiar" layoutX="439.0" layoutY="295.0" mnemonicParsing="false" onAction="#onLimpiar" prefHeight="21.0" prefWidth="110.0" text="Limpiar" />
+                        <!-- BOTON REGRESAR -->
+                        <Button fx:id="btnRegresar" layoutX="296.0" layoutY="295.0" mnemonicParsing="false" onAction="#onRegresar" prefHeight="26.0" prefWidth="117.0" text="Regresar " />
                         <Button fx:id="btnLimpiar" layoutX="360.0" layoutY="295.0" mnemonicParsing="false" onAction="#onLimpiar" prefHeight="21.0" prefWidth="110.0" text="Limpiar" />
                   <Button layoutX="118.0" layoutY="297.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="117.0" text="Regresar " />
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
@@ -101,16 +102,21 @@
 
                         </TableView>
 
-                        <Button fx:id="btnAgregarTarifa" layoutX="144.0" layoutY="230.0" mnemonicParsing="false" onAction="#onAgregarTarifa" prefWidth="120.0" text="Registrar" />
-
-                        <Button fx:id="btnModificarTarifa" layoutX="280.0" layoutY="230.0" mnemonicParsing="false" onAction="#onModificarTarifa" prefWidth="120.0" text="Modificar" />
-
-                        <Button fx:id="btnEliminarTarifa" layoutX="410.0" layoutY="230.0" mnemonicParsing="false" onAction="#onEliminarTarifa" prefWidth="120.0" text="Eliminar" />
-
-                        <Button fx:id="btnLimpiar" layoutX="544.0" layoutY="230.0" mnemonicParsing="false" onAction="#onLimpiar" prefWidth="90.0" text="Limpiar" />
-                  <Button fx:id="btnAgregarTarifa1" layoutX="15.0" layoutY="230.0" mnemonicParsing="false" onAction="#onAgregarTarifa" prefWidth="120.0" text="Regresar" />
+                        <!-- BOTON AGREGAR -->
+                        <Button fx:id="btnAgregarTarifa" layoutX="61.0" layoutY="230.0" mnemonicParsing="false" onAction="#onAgregarTarifa" prefWidth="120.0" text="Registrar" />
+                        <!-- BOTON MODIFICAR -->
+                        <Button fx:id="btnModificarTarifa" layoutX="198.0" layoutY="230.0" mnemonicParsing="false" onAction="#onActualizarTarifa" prefWidth="120.0" text="Modificar" />
+                        <!-- BOTON ELIMINAR -->
+                        <Button fx:id="btnEliminarTarifa" layoutX="337.0" layoutY="230.0" mnemonicParsing="false" onAction="#onEliminarTarifa" prefWidth="120.0" text="Eliminar" />
+                        <!-- BOTON LIMPIAR -->
+                        <Button fx:id="btnLimpiar" layoutX="469.0" layoutY="230.0" mnemonicParsing="false" onAction="#onLimpiar" prefWidth="90.0" text="Limpiar" />
+                        <!-- BOTON REGRESAR -->
+                        <Button fx:id="btnRegresar" defaultButton="true" layoutX="266.0" layoutY="274.0" mnemonicParsing="false" onAction="#onRegresar" prefHeight="26.0" prefWidth="117.0" text="Regresar " />
 
                     </children>
+               <padding>
+                  <Insets bottom="25.0" />
+               </padding>
 
                 </AnchorPane>
 

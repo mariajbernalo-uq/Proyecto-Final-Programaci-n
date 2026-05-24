@@ -74,9 +74,10 @@
                                 <TableColumn fx:id="tbcVehiculoAsignado" prefWidth="135.0" text="Vehículo" />
                             </columns>
                         </TableView>
-
-                        <Button fx:id="btnLimpiar" layoutX="391.0" layoutY="235.0" mnemonicParsing="false" onAction="#onLimpiar" prefWidth="110.0" text="Limpiar" />
-                  <Button fx:id="btnLimpiar1" layoutX="142.0" layoutY="235.0" mnemonicParsing="false" onAction="#onLimpiar" prefWidth="110.0" text="Regresar" />
+                        <!-- BOTON LIMPIAR -->
+                        <Button fx:id="btnLimpiar" layoutX="340.0" layoutY="234.0" mnemonicParsing="false" onAction="#onLimpiar" prefWidth="110.0" text="Limpiar" />
+                        <!-- BOTON REGRESAR -->
+                        <Button fx:id="btnRegresar" layoutX="195.0" layoutY="233.0" mnemonicParsing="false" onAction="#onRegresar" prefHeight="26.0" prefWidth="117.0" text="Regresar " />
                     </children>
                 </AnchorPane>
             </items>

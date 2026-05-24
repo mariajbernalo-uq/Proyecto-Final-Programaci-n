@@ -31,6 +31,6 @@ public class OpcionesParqueaderoController {
     }
 
     public void salir() {
-        app.openPrimaryView();
+        app.cerrarAplicacion();
     }
 }
