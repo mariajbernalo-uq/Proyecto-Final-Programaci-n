@@ -120,7 +120,6 @@ class UniversidadTest {
         universidad.getListEspaciosParqueaderos().add(espacioParqueadero2);
         assertEquals("Total: 2\nDisponibles: 0\nOcupados: 1\nEn mantenimiento: 1",universidad.consultarEstadoEspacios());
     }
-
     @Test
     void consultarVehiculosEstacionadosTest() {
         Universidad universidad = new Universidad("uq", 159, "34");
@@ -220,7 +219,6 @@ class UniversidadTest {
         universidad.getListUsuarios().add(usuario1);
         String respuesta=universidad.eliminarUsuario("1095");
         assertEquals("Usuario eliminado correctamente", respuesta);
-
     }
     @Test
     void listarUsuariosTest() {
