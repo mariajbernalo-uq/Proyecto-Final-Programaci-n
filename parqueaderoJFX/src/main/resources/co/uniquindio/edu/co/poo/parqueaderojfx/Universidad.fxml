@@ -68,11 +68,6 @@
             <!-- BOTON REGRESAR -->
             <Button onAction="#onRegresar"
                     text="Regresar" />
-            <Button onAction="#onConsultarEstadoEspacios" text="Estado Espacios" />
-
-            <Button onAction="#onConsultarVehiculos" text="Vehículos Parqueados" />
-
-            <Button onAction="#onVolver" text="Volver" />
 
         </HBox>
 

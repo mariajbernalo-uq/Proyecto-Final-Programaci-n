@@ -93,8 +93,9 @@ public class App extends Application {
             controller.setApp(this);
 
             primaryStage.setScene(scene);
-            primaryStage.setTitle("PARKUQ - Opciones");
+            primaryStage.setTitle("PARQUEAUQ - Opciones");
             primaryStage.show();
+            primaryStage.centerOnScreen();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -120,6 +121,7 @@ public class App extends Application {
             primaryStage.setScene(scene);
             primaryStage.setTitle("Gestión de Vehículos");
             primaryStage.show();
+            primaryStage.centerOnScreen();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -145,6 +147,7 @@ public class App extends Application {
             primaryStage.setScene(scene);
             primaryStage.setTitle("Gestión de Usuarios");
             primaryStage.show();
+            primaryStage.centerOnScreen();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -170,6 +173,7 @@ public class App extends Application {
             primaryStage.setScene(scene);
             primaryStage.setTitle("Gestión de Tarifas");
             primaryStage.show();
+            primaryStage.centerOnScreen();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -195,6 +199,7 @@ public class App extends Application {
             primaryStage.setScene(scene);
             primaryStage.setTitle("Gestión de Espacios");
             primaryStage.show();
+            primaryStage.centerOnScreen();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -220,6 +225,7 @@ public class App extends Application {
             primaryStage.setScene(scene);
             primaryStage.setTitle("Reportes del Parqueadero");
             primaryStage.show();
+            primaryStage.centerOnScreen();
 
         } catch (Exception e) {
             e.printStackTrace();

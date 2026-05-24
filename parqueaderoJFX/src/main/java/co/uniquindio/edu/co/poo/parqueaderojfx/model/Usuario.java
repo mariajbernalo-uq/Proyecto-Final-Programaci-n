@@ -11,9 +11,9 @@ public class Usuario {
 
     /**
      * Metodo constructor de la clase Usuario
-     * @param nombre
-     * @param identificacion
-     * @param tipoUsuario
+     * @param nombre del usuario
+     * @param identificacion del usuario
+     * @param tipoUsuario del usuario
      */
     public Usuario(String nombre, String identificacion, TipoUsuario tipoUsuario) {
         this.nombre = nombre;
@@ -26,11 +26,11 @@ public class Usuario {
      * Método para añadir los vehículos que pertenecen al usuario a la lista de vehículos
      * @param vehiculo a añadir a la lista
      */
-    public void añadirVehiculoLista(Vehiculo vehiculo){
+    public void anadirVehiculoLista(Vehiculo vehiculo){
         listVehiculos.add(vehiculo);
     }
 
-
+    //Getters y Setters de la clase Usuario
     public String getNombre() {
         return nombre;
     }
