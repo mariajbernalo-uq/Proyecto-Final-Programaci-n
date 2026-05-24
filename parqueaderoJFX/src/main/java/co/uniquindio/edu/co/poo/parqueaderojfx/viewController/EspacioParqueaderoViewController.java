@@ -38,18 +38,6 @@ public class EspacioParqueaderoViewController {
     private ComboBox<EstadoEspacio> cbEstadoEspacio;
 
     @FXML
-    private Button btnAgregarEspacio;
-
-    @FXML
-    private Button btnActualizarEspacio;
-
-    @FXML
-    private Button btnDeshabilitarEspacio;
-
-    @FXML
-    private Button btnLimpiar;
-
-    @FXML
     private TableView<EspacioParqueadero> tblListEspacios;
 
     @FXML
@@ -82,6 +70,11 @@ public class EspacioParqueaderoViewController {
     @FXML
     void onLimpiar() {
         limpiarSeleccion();
+    }
+
+    @FXML
+    void onRegresar() {
+        app.openOpcionesParqueaderoView();
     }
 
     @FXML

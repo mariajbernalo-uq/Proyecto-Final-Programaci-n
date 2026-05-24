@@ -43,6 +43,9 @@ public class OpcionesParqueaderoViewController {
     private Button btnInterfazPrimary;
 
     @FXML
+    private Button btnSalir;
+
+    @FXML
     void openInterfazVehiculo() {
 
         opcionesParqueaderoController.abrirVehiculo();
@@ -73,7 +76,7 @@ public class OpcionesParqueaderoViewController {
     }
 
     @FXML
-    void openInterfazPrimary() {
+    void salirAplicacion() {
 
         opcionesParqueaderoController.salir();
     }

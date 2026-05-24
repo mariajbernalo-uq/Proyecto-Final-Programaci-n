@@ -95,11 +95,12 @@
                             </columns>
                         </TableView>
 
-                        <!-- BOTONES ABAJO -->
-                        <Button fx:id="btnLimpiar" layoutX="155.0" layoutY="225.0" mnemonicParsing="false" onAction="#onLimpiar" prefHeight="25.0" prefWidth="100.0" text="Limpiar" />
-
+                        <!-- BOTON LIMPIAR -->
+                        <Button fx:id="btnLimpiar" layoutX="164.0" layoutY="225.0" mnemonicParsing="false" onAction="#onLimpiar" prefHeight="25.0" prefWidth="100.0" text="Limpiar" />
+                        <!-- BOTON ElIMINAR -->
                         <Button fx:id="btnEliminar" layoutX="276.0" layoutY="225.0" mnemonicParsing="false" onAction="#onEliminar" prefHeight="25.0" prefWidth="100.0" text="Eliminar" />
-                  <Button fx:id="btnLimpiar1" layoutX="35.0" layoutY="225.0" mnemonicParsing="false" onAction="#onLimpiar" prefHeight="25.0" prefWidth="100.0" text="Regresar" />
+                        <!-- BOTON REGRESAR -->
+                        <Button fx:id="btnRegresar" layoutX="31.0" layoutY="224.0" mnemonicParsing="false" onAction="#onRegresar" prefHeight="26.0" prefWidth="117.0" text="Regresar " />
 
                     </children>
                 </AnchorPane>

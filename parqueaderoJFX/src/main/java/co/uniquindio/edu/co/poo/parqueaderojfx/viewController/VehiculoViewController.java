@@ -44,6 +44,12 @@ public class VehiculoViewController {
     private TextField txtHoraSalida;
 
     @FXML
+    private DatePicker dateFechaIngreso;
+
+    @FXML
+    private DatePicker dateFechaSalida;
+
+    @FXML
     private ComboBox<TipoVehiculo> cbTipoVehiculo;
 
     @FXML
@@ -92,6 +98,11 @@ public class VehiculoViewController {
     @FXML
     void onLimpiar() {
         limpiarSeleccion();
+    }
+
+    @FXML
+    void onRegresar() {
+        regresarMenu();
     }
 
     @FXML
@@ -169,14 +180,16 @@ public class VehiculoViewController {
             String placa = txtPlaca.getText();
             String nombreConductor = txtNombreConductor.getText();
             int identificacionConductor = Integer.parseInt(txtIdentificacionConductor.getText());
-            String horaIngreso = txtHoraIngreso.getText();
             TipoVehiculo tipoVehiculo = cbTipoVehiculo.getValue();
 
-            if (placa.isEmpty() || nombreConductor.isEmpty() || horaIngreso.isEmpty() || tipoVehiculo == null) {
+            if (placa.isEmpty() || nombreConductor.isEmpty() || dateFechaIngreso.getValue() == null || tipoVehiculo == null) {
                 mostrarMensaje("Debe completar todos los campos para registrar la entrada.");
                 return;
             }
-
+            String horaIngreso =
+                    dateFechaIngreso.getValue()
+                            + " "
+                            + txtHoraIngreso.getText();
             String identificacionUsuario = String.valueOf(identificacionConductor);
 
             Usuario usuario = vehiculoController.obtenerUsuario(identificacionUsuario);
@@ -218,13 +231,15 @@ public class VehiculoViewController {
     private void registrarSalidaVehiculo() {
         try {
             String placa = txtPlaca.getText();
-            String horaSalida = txtHoraSalida.getText();
 
-            if (placa.isEmpty() || horaSalida.isEmpty()) {
+            if (placa.isEmpty() || txtHoraSalida.getText().isEmpty()) {
                 mostrarMensaje("Debe ingresar la placa y la hora de salida.");
                 return;
             }
-
+            String horaSalida =
+                    dateFechaSalida.getValue()
+                            + " "
+                            + txtHoraSalida.getText();
             String factura = vehiculoController.generarFactura(placa, horaSalida);
 
             String resultado = vehiculoController.registrarSalidaVehiculo(
@@ -251,6 +266,10 @@ public class VehiculoViewController {
         tblListVehiculo.getSelectionModel().clearSelection();
         selectedVehiculo = null;
         limpiarCamposVehiculo();
+    }
+
+    private void regresarMenu() {
+        app.openOpcionesParqueaderoView();
     }
 
     private void limpiarCamposVehiculo() {

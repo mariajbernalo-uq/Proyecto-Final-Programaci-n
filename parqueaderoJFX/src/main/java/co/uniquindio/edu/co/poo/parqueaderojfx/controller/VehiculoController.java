@@ -13,22 +13,14 @@ public class VehiculoController {
     }
 
     // REGISTRAR ENTRADA
-    public String registrarEntradaVehiculo(
-            String placa,
-            String nombreConductor,
-            int identificacionConductor,
-            String horaIngreso,
-            TipoVehiculo tipoVehiculo,
-            Usuario usuario
-    ) {
-
+    public String registrarEntradaVehiculo( String placa, String nombreConductor, int identificacionConductor, String horaIngreso, TipoVehiculo tipoVehiculo, Usuario theUsuario){
         return universidad.registrarEntradaVehiculo(
                 placa,
                 nombreConductor,
                 identificacionConductor,
                 horaIngreso,
                 tipoVehiculo,
-                usuario
+                theUsuario
         );
     }
 
