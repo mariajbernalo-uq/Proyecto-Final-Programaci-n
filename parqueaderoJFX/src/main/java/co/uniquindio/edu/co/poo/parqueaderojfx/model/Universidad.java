@@ -1,6 +1,7 @@
 package co.uniquindio.edu.co.poo.parqueaderojfx.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.Duration;
@@ -76,6 +77,7 @@ public class Universidad {
     public String registrarEntradaVehiculo(String placa, String nombreConductor, int identificacionConductor, String horaIngreso, TipoVehiculo tipoVehiculo, Usuario theUsuario){
         String respuesta="";
         EspacioParqueadero espacioDisponible = buscarEspacioDisponible(tipoVehiculo);
+        Usuario usuario= obtenerUsuario(String.valueOf(identificacionConductor));
 
         for(Vehiculo v:listVehiculos){
             if(v.getPlaca().equalsIgnoreCase(placa) && v.getEstadoVehiculo()==EstadoVehiculo.DENTRO){
@@ -97,6 +99,7 @@ public class Universidad {
                     EstadoVehiculo.DENTRO
             );
             espacioDisponible.asignarEspacio(vehiculo);
+            usuario.anadirVehiculoLista(vehiculo);
             vehiculo.setTheEspacioParqueadero(espacioDisponible);
             registrarVehiculo(vehiculo);
 
@@ -113,15 +116,20 @@ public class Universidad {
      * @return
      */
     public double calcularTiempoPermanencia(String horaIngreso, String horaSalida) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+        DateTimeFormatter formatter =
+                DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
-        LocalTime ingreso = LocalTime.parse(horaIngreso, formatter);
-        LocalTime salida = LocalTime.parse(horaSalida, formatter);
+        LocalDateTime ingreso =
+                LocalDateTime.parse(horaIngreso, formatter);
 
-        long minutos = Duration.between(ingreso, salida).toMinutes();
-
+        LocalDateTime salida =
+                LocalDateTime.parse(horaSalida, formatter);
+        long minutos =
+                Duration.between(ingreso, salida).toMinutes();
         if (minutos < 0) {
-            throw new IllegalArgumentException("La hora de salida no puede ser menor que la hora de ingreso");
+            throw new IllegalArgumentException(
+                    "La hora de salida no puede ser menor que la hora de ingreso"
+            );
         }
 
         return Math.ceil(minutos / 60.0);
@@ -606,18 +614,38 @@ public class Universidad {
      * @return El total de ingresos generados hoy.
      */
     public double ingresosGeneradosDia() {
+
         double totalIngresos = 0;
-        LocalDate hoy = LocalDate.now();  // Obtenemos la fecha de hoy
+        LocalDate hoy = LocalDate.now();
 
         for (Vehiculo v : listVehiculos) {
-            LocalDate ingresoFecha = LocalDate.parse(v.getHoraIngreso().split(" ")[0]);
-            if (ingresoFecha.equals(hoy)) {
-                double tiempo = calcularTiempoPermanencia(v.getHoraIngreso(), v.getHoraSalida());
-                Tarifa tarifa = obtenerTarifaPorTipoVehiculo(v.getTipoVehiculo());
-                double ingresos = tarifa.calcularTotal(tiempo, v.getTheUsuario().getTipoUsuario());
-                totalIngresos += ingresos;
+
+            if (v.getEstadoVehiculo() == EstadoVehiculo.FUERA) {
+                LocalDate ingresoFecha = LocalDate.parse(
+                        v.getHoraIngreso().split(" ")[0]
+                );
+
+                if (ingresoFecha.equals(hoy)) {
+
+                    double tiempo = calcularTiempoPermanencia(
+                            v.getHoraIngreso(),
+                            v.getHoraSalida()
+                    );
+
+                    Tarifa tarifa = obtenerTarifaPorTipoVehiculo(
+                            v.getTipoVehiculo()
+                    );
+
+                    double ingresos = tarifa.calcularTotal(
+                            tiempo,
+                            v.getTheUsuario().getTipoUsuario()
+                    );
+
+                    totalIngresos += ingresos;
+                }
             }
         }
+
         return totalIngresos;
     }
     /**
@@ -652,12 +680,14 @@ public class Universidad {
         StringBuilder reporte = new StringBuilder();
 
         for (Vehiculo v : listVehiculos) {
-            double tiempo = calcularTiempoPermanencia(v.getHoraIngreso(), v.getHoraSalida());
-            if (tiempo > horas) {
-                reporte.append("Placa: ").append(v.getPlaca())
-                        .append(" | Tipo: ").append(v.getTipoVehiculo())
-                        .append(" | Tiempo de permanencia: ").append(tiempo)
-                        .append(" horas\n");
+            if (v.getEstadoVehiculo() == EstadoVehiculo.FUERA) {
+                double tiempo = calcularTiempoPermanencia(v.getHoraIngreso(), v.getHoraSalida());
+                if (tiempo > horas) {
+                    reporte.append("Placa: ").append(v.getPlaca())
+                            .append(" | Tipo: ").append(v.getTipoVehiculo())
+                            .append(" | Tiempo de permanencia: ").append(tiempo)
+                            .append(" horas\n");
+                }
             }
         }
         if(reporte.isEmpty()){

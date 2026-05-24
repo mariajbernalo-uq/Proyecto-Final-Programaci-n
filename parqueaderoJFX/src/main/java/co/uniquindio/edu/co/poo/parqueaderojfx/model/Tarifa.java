@@ -33,19 +33,29 @@ public class Tarifa {
 
     /**
      * Método para calcular el descuento de la tarifa
+     *
      * @param tipoUsuario para calcular el descuento de la tarifa
      * @return descuento aplicable
      */
     public double calcularDescuento(TipoUsuario tipoUsuario) {
+
         switch (tipoUsuario) {
             case DOCENTE:
-                return 0.15;
+                this.descuento = 0.15;
+                return descuento;
+
             case ADMINISTRATIVO:
-                return 0.20;
+                this.descuento = 0.20;
+                return descuento;
+
             case ESTUDIANTE:
-                return 0.10;
+                this.descuento = 0.10;
+                return descuento;
+
             case VISITANTE:
-                return 0.0;
+                this.descuento = 0.0;
+                return descuento;
+
             default:
                 throw new IllegalArgumentException("Tipo de usuario no válido");
         }
@@ -60,7 +70,7 @@ public class Tarifa {
     public double calcularTotal(double tiempo, TipoUsuario tipoUsuario){
         double tarifa= this.valorPorHora;
         double valorTotal=tiempo*tarifa;
-        double descuento= calcularDescuento(tipoUsuario);
+        double descuento= getDescuento();
         double totalConDescuento= valorTotal-(valorTotal*descuento);
         return totalConDescuento;
     }

@@ -11,6 +11,18 @@ public class Vehiculo {
     private Usuario theUsuario;
     private EstadoVehiculo estadoVehiculo;
 
+    /**
+     * Constructor de la clase Vehiculo
+     * @param placa del vehiculo
+     * @param nombreConductor del vehiculo
+     * @param identificacionConductor del vehiculo
+     * @param horaIngreso del vehiculo
+     * @param horaSalida del vehiculo
+     * @param theEspacioParqueadero del vehiculo
+     * @param tipoVehiculo del vehiculo
+     * @param theUsuario del vehiculo
+     * @param estadoVehiculo del vehiculo
+     */
     public Vehiculo(String placa, String nombreConductor, int identificacionConductor, String horaIngreso, String horaSalida, EspacioParqueadero theEspacioParqueadero, TipoVehiculo tipoVehiculo, Usuario theUsuario, EstadoVehiculo estadoVehiculo) {
         this.placa = placa;
         this.nombreConductor = nombreConductor;
@@ -22,7 +34,7 @@ public class Vehiculo {
         this.theUsuario = theUsuario;
         this.estadoVehiculo = estadoVehiculo;
     }
-
+    //Getters y Setters de la clase Vehiculo
     public String getPlaca() {
         return this.placa;
     }
