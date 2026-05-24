@@ -29,22 +29,23 @@ class UniversidadTest {
     void registrarEntradaVehiculoTest() {
         Universidad universidad=new Universidad("UQ", 1236,"Cra 14");
         EspacioParqueadero espacioParqueadero=new EspacioParqueadero(5,TipoVehiculo.CARRO);
+        Usuario usuario=new Usuario("Sofia","1092851",TipoUsuario.ESTUDIANTE);
         universidad.getListEspaciosParqueaderos().add(espacioParqueadero);
-       String resultado= universidad.registrarEntradaVehiculo("MXQ852","Sofia",1235,"02:00",TipoVehiculo.CARRO,null);
+        universidad.getListUsuarios().add(usuario);
+       String resultado= universidad.registrarEntradaVehiculo("MXQ852","Sofia",1092851,"2026-05-24 02:00",TipoVehiculo.CARRO,usuario);
         assertEquals("Se ha añadido el vehículo exitosamente",resultado);
     }
 
     @Test
     void calcularTiempoPermanenciaTest() {
         Universidad universidad=new Universidad("uq",159,"34");
-        Vehiculo vehiculo=new Vehiculo("mq","sofia",147,"08:00","12:00",null,TipoVehiculo.CARRO,null,EstadoVehiculo.DENTRO);
-        assertEquals(4.0,universidad.calcularTiempoPermanencia("08:00","12:00"));
+        assertEquals(4.0,universidad.calcularTiempoPermanencia("2026-05-24 08:00","2026-05-24 12:00"));
     }
     @Test
     void registrarSalidaVehiculoTest(){
         Universidad universidad=new Universidad("uq",159,"34");
         EspacioParqueadero espacioParqueadero=new EspacioParqueadero(123,TipoVehiculo.CARRO);
-        Vehiculo vehiculo=new Vehiculo("mq","sofia",147,"08:00","12:00",123,TipoVehiculo.CARRO,null,EstadoVehiculo.DENTRO);
+        Vehiculo vehiculo=new Vehiculo("mq","sofia",147,"08:00","12:00",null,TipoVehiculo.CARRO,null,EstadoVehiculo.DENTRO);
         assertEquals("El vehiculo no se encuentra registrado en el parqueadero",universidad.registrarSalidaVehiculo(vehiculo.getPlaca(),"12:00"));   }
     @Test
     void buscarEspacioDisponibleTest() {
