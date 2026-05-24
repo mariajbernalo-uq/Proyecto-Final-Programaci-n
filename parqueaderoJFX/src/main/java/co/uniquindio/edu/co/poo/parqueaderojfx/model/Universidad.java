@@ -298,8 +298,10 @@ public class Universidad {
      */
     public String consultarVehiculosEstacionados() {
         StringBuilder reporte = new StringBuilder("=== VEHICULOS ACTUALMENTE ESTACIONADOS ===\n");
+        boolean hayVehiculos=false;
         for (Vehiculo v : listVehiculos) {
             if (v.getEstadoVehiculo() == EstadoVehiculo.DENTRO) {
+                hayVehiculos=true;
                 reporte.append("Placa: ").append(v.getPlaca())
                         .append(" | Tipo: ").append(v.getTipoVehiculo())
                         .append(" | Hora ingreso: ").append(v.getHoraIngreso());
@@ -311,7 +313,7 @@ public class Universidad {
             }
         }
 
-        if (reporte.isEmpty()) {
+        if (!hayVehiculos) {
             return "No hay vehículos estacionados";
         }
 
@@ -367,7 +369,7 @@ public class Universidad {
             respuesta = "Tarifa no encontrada";
         }else{
             listTarifas.remove(tarifa);
-            respuesta = "Tarifa eliminado correctamente";
+            respuesta = "Tarifa eliminada correctamente";
         }
         return respuesta;
     }
@@ -387,7 +389,7 @@ public class Universidad {
             tarifa.setTipoVehiculo(tipoVehiculo);
             tarifa.setDescuento(descuento);
             tarifa.setValorPorHora(valorHora);
-            respuesta="La tarifa ha sido modificado correctamente";
+            respuesta="La tarifa ha sido modificada correctamente";
         }
         return respuesta;
     }
@@ -451,7 +453,7 @@ public class Universidad {
         } else{
             Usuario nUsuario= new Usuario(nombre, identificacion, tipoUsuario);
             listUsuarios.add(nUsuario);
-            respuesta= " El usuario " + nUsuario.getNombre()+ "ha sido registrado en el sistema éxitosamente";
+            respuesta= "El usuario " + nUsuario.getNombre()+ " ha sido registrado en el sistema exitosamente";
         }
         return respuesta;
     }
@@ -663,7 +665,6 @@ public class Universidad {
                 totalTiempo += tiempo;
                 totalVehiculos++;
             }
-
         }
         if (totalVehiculos > 0){
             promedio= totalTiempo / totalVehiculos;
