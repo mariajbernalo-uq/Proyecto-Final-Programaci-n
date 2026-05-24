@@ -43,18 +43,32 @@ class UniversidadTest {
     @Test
     void registrarSalidaVehiculoTest(){
         Universidad universidad=new Universidad("uq",159,"34");
-        Vehiculo vehiculo=new Vehiculo("mq","sofia",147,"08:00","12:00",null,TipoVehiculo.CARRO,null,EstadoVehiculo.DENTRO);
-        assertEquals();   }
+        EspacioParqueadero espacioParqueadero=new EspacioParqueadero(123,TipoVehiculo.CARRO);
+        Vehiculo vehiculo=new Vehiculo("mq","sofia",147,"08:00","12:00",123,TipoVehiculo.CARRO,null,EstadoVehiculo.DENTRO);
+        assertEquals("El vehiculo no se encuentra registrado en el parqueadero",universidad.registrarSalidaVehiculo(vehiculo.getPlaca(),"12:00"));   }
     @Test
-    void buscarEspacioDisponible() {
+    void buscarEspacioDisponibleTest() {
+        Universidad universidad=new Universidad("uq",159,"34");
+        EspacioParqueadero espacioParqueadero=new EspacioParqueadero(123,TipoVehiculo.CARRO);
+        universidad.getListEspaciosParqueaderos().add(espacioParqueadero);
+        assertEquals(espacioParqueadero,universidad.buscarEspacioDisponible(TipoVehiculo.CARRO));
     }
 
     @Test
-    void obtenerEspacio() {
+    void obtenerEspacioTest() {
+        Universidad universidad=new Universidad("uq",159,"34");
+        EspacioParqueadero espacioParqueadero=new EspacioParqueadero(123,TipoVehiculo.CARRO);
+        universidad.getListEspaciosParqueaderos().add(espacioParqueadero);
+        assertEquals(3,universidad.obtenerEspacio(123));
     }
 
     @Test
-    void registrarNuevoEspacio() {
+    void registrarNuevoEspacioTest() {
+        Universidad universidad=new Universidad("uq",159,"34");
+        EspacioParqueadero espacioParqueadero=new EspacioParqueadero(123,TipoVehiculo.CARRO);
+        universidad.getListEspaciosParqueaderos().add(espacioParqueadero);
+        assertEquals(espacioParqueadero,universidad.registrarNuevoEspacio(123,TipoVehiculo.CARRO));
+
     }
 
     @Test
