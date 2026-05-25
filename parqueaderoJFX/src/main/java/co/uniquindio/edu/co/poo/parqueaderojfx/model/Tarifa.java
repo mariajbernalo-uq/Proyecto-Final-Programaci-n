@@ -70,7 +70,7 @@ public class Tarifa {
     public double calcularTotal(double tiempo, TipoUsuario tipoUsuario){
         double tarifa= this.valorPorHora;
         double valorTotal=tiempo*tarifa;
-        double descuento= getDescuento();
+        double descuento= calcularDescuento(tipoUsuario);
         double totalConDescuento= valorTotal-(valorTotal*descuento);
         return totalConDescuento;
     }
