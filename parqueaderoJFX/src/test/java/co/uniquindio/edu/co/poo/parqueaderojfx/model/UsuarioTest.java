@@ -2,6 +2,9 @@ package co.uniquindio.edu.co.poo.parqueaderojfx.model;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class UsuarioTest {
@@ -49,8 +52,11 @@ class UsuarioTest {
     @Test
     void setListVehiculos() {
         Usuario usuario= new Usuario("Maria", "1004446220", TipoUsuario.ESTUDIANTE);
-        usuario.setListVehiculos(null);
-        assertTrue(usuario.getListVehiculos().isEmpty());
+        List<Vehiculo> listVehiculos= new ArrayList<>();
+        Vehiculo vehiculo = new Vehiculo("VRK42F", "Majo", 1004446220, "03:00", "05:00", null, TipoVehiculo.BICICLETA, null,EstadoVehiculo.DENTRO);
+        listVehiculos.add(vehiculo);
+        usuario.setListVehiculos(listVehiculos);
+        assertTrue(usuario.getListVehiculos()==listVehiculos);
     }
 
     @Test
