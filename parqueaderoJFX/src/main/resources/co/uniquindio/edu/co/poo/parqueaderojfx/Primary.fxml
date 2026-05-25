@@ -13,7 +13,7 @@
 
     <children>
 
-        <Label text="ParqueaUQ" textAlignment="CENTER">
+        <Label text="Parquea UQ" textAlignment="CENTER">
             <font>
                 <Font name="Arial Bold" size="30.0" />
             </font>
