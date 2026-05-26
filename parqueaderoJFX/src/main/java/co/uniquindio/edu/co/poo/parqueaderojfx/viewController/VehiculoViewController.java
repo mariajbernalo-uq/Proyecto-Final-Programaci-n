@@ -198,7 +198,7 @@ public class VehiculoViewController {
                 usuario = new Usuario(
                         nombreConductor,
                         identificacionUsuario,
-                        TipoUsuario.VISITANTE
+                        TipoUsuario.ESTUDIANTE
                 );
 
                 vehiculoController.registrarUsuario(
