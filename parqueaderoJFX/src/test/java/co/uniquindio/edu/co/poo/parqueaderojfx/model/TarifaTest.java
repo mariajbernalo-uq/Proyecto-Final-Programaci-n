@@ -26,7 +26,8 @@ class TarifaTest {
     void calcularTotal() {
         Tarifa tarifa = new Tarifa(TipoVehiculo.BICICLETA);
         double calculo= tarifa.calcularTotal(5,TipoUsuario.DOCENTE);
-        assertEquals(7500, calculo);
+        double esperado= (tarifa.getValorPorHora()*5)-(tarifa.getValorPorHora()*5*tarifa.getDescuento());
+        assertEquals(esperado, calculo);
     }
 
     @Test
